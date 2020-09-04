@@ -1,0 +1,123 @@
+Denavit-Hartenberg Model
+[type, theta, d, a, alpha]
+⎡rotational  q₁  0.147   0.033  1.5707⎤
+⎢                                     ⎥
+⎢rotational  q₂    0     0.155    0   ⎥
+⎢                                     ⎥
+⎢rotational  q₃    0     0.135    0   ⎥
+⎢                                     ⎥
+⎢rotational  q₄    0       0    1.5707⎥
+⎢                                     ⎥
+⎣rotational  q₅  0.2175    0      0   ⎦
+
+Matrix T5
+⎡(1.0⋅sin(q₁) - 9.633e-5⋅sin(q₂ + q₃ + q₄)⋅cos(q₁))⋅sin(q₅) + 1.0⋅cos(q₁)⋅cos(q₅)⋅cos(q₂ + q₃ + q₄)   (1.0⋅sin(q₁) - 9.633e-5⋅sin(q₂ + q₃ + q₄)⋅cos(q₁))⋅cos(q₅) - 1.0⋅sin(q₅)⋅cos(q₁)⋅cos(q₂ + q₃ + q₄)   9.633e-5⋅sin(q₁) + 1.0⋅sin(q₂ + q₃ + q₄)⋅cos(q₁)  -1.493e-5⋅sin(q₁)⋅sin(q₂) - 7.629e-6⋅sin(q₁)⋅sin(q₂ + q₃) + 2.095e-5⋅sin(q₁) + 0.2175⋅sin(q₂ + q₃ + q₄)⋅cos(q₁) + 0.155⋅cos(q₁)⋅cos(q₂) + 0.135⋅cos(q₁)⋅cos(q₂ + q₃) + 0.033⋅cos(q₁)⎤
+⎢                                                                                                                                                                                                                                                                                                                                                                                                                                                ⎥
+⎢-(9.633e-5⋅sin(q₁)⋅sin(q₂ + q₃ + q₄) + 1.0⋅cos(q₁))⋅sin(q₅) + 1.0⋅sin(q₁)⋅cos(q₅)⋅cos(q₂ + q₃ + q₄)  -(9.633e-5⋅sin(q₁)⋅sin(q₂ + q₃ + q₄) + 1.0⋅cos(q₁))⋅cos(q₅) - 1.0⋅sin(q₁)⋅sin(q₅)⋅cos(q₂ + q₃ + q₄)  1.0⋅sin(q₁)⋅sin(q₂ + q₃ + q₄) - 9.633e-5⋅cos(q₁)  0.2175⋅sin(q₁)⋅sin(q₂ + q₃ + q₄) + 0.155⋅sin(q₁)⋅cos(q₂) + 0.135⋅sin(q₁)⋅cos(q₂ + q₃) + 0.033⋅sin(q₁) + 1.493e-5⋅sin(q₂)⋅cos(q₁) + 7.629e-6⋅sin(q₂ + q₃)⋅cos(q₁) - 2.095e-5⋅cos(q₁) ⎥
+⎢                                                                                                                                                                                                                                                                                                                                                                                                                                                ⎥
+⎢             9.633e-5⋅(cos(q₂ + q₃ + q₄) + 1)⋅sin(q₅) + 1.0⋅sin(q₂ + q₃ + q₄)⋅cos(q₅)                             9.633e-5⋅(cos(q₂ + q₃ + q₄) + 1)⋅cos(q₅) - 1.0⋅sin(q₅)⋅sin(q₂ + q₃ + q₄)                        9.279e-9 - 1.0⋅cos(q₂ + q₃ + q₄)                                                                 0.155⋅sin(q₂) + 0.135⋅sin(q₂ + q₃) - 0.2175⋅cos(q₂ + q₃ + q₄) + 0.147                                                        ⎥
+⎢                                                                                                                                                                                                                                                                                                                                                                                                                                                ⎥
+⎣                                                 0                                                                                                    0                                                                          0                                                                                                                  1.0                                                                                         ⎦
+
+Jacobian Column for T5
+⎡-((9.633e-5⋅sin(q₁)⋅sin(q₂ + q₃ + q₄) + 1.0⋅cos(q₁))⋅sin(q₅) - 1.0⋅sin(q₁)⋅cos(q₅)⋅cos(q₂ + q₃ + q₄))⋅(-1.493e-5⋅sin(q₁)⋅sin(q₂) - 7.629e-6⋅sin(q₁)⋅sin(q₂ + q₃) + 2.095e-5⋅sin(q₁) + 0.2175⋅sin(q₂ + q₃ + q₄)⋅cos(q₁) + 0.155⋅cos(q₁)⋅cos(q₂) + 0.135⋅cos(q₁)⋅cos(q₂ + q₃) + 0.033⋅cos(q₁)) - ((1.0⋅sin(q₁) - 9.633e-5⋅sin(q₂ + q₃ + q₄)⋅cos(q₁))⋅sin(q₅) + 1.0⋅cos(q₁)⋅cos(q₅)⋅cos(q₂ + q₃ + q₄))⋅(0.2175⋅sin(q₁)⋅sin(q₂ + q₃ + q₄) + 0.155⋅sin(q₁)⋅cos(q₂) + 0.135⋅sin(q₁)⋅cos(q₂ + q₃) + 0.033⋅sin(q₁) + 1.493e-5⋅sin(q₂)⋅cos(q₁) + 7.629e-6⋅sin(q₂ + q₃)⋅cos(q₁) - 2.095e-5⋅cos(q₁))⎤
+⎢                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ⎥
+⎢-((9.633e-5⋅sin(q₁)⋅sin(q₂ + q₃ + q₄) + 1.0⋅cos(q₁))⋅cos(q₅) + 1.0⋅sin(q₁)⋅sin(q₅)⋅cos(q₂ + q₃ + q₄))⋅(-1.493e-5⋅sin(q₁)⋅sin(q₂) - 7.629e-6⋅sin(q₁)⋅sin(q₂ + q₃) + 2.095e-5⋅sin(q₁) + 0.2175⋅sin(q₂ + q₃ + q₄)⋅cos(q₁) + 0.155⋅cos(q₁)⋅cos(q₂) + 0.135⋅cos(q₁)⋅cos(q₂ + q₃) + 0.033⋅cos(q₁)) - ((1.0⋅sin(q₁) - 9.633e-5⋅sin(q₂ + q₃ + q₄)⋅cos(q₁))⋅cos(q₅) - 1.0⋅sin(q₅)⋅cos(q₁)⋅cos(q₂ + q₃ + q₄))⋅(0.2175⋅sin(q₁)⋅sin(q₂ + q₃ + q₄) + 0.155⋅sin(q₁)⋅cos(q₂) + 0.135⋅sin(q₁)⋅cos(q₂ + q₃) + 0.033⋅sin(q₁) + 1.493e-5⋅sin(q₂)⋅cos(q₁) + 7.629e-6⋅sin(q₂ + q₃)⋅cos(q₁) - 2.095e-5⋅cos(q₁))⎥
+⎢                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ⎥
+⎢                                                                                                                                                                                                                                                                                           2                                                                             2                                                                                                                                                                                                               ⎥
+⎢                                                                                                                                                       7.629e-6⋅sin(q₂)⋅sin(q₃)⋅sin(q₄)⋅sin(q₂ + q₃) - 1.526e-5⋅sin(q₂)⋅sin(q₃)⋅cos(q₂)⋅cos(q₃)⋅cos(q₄) - 7.629e-6⋅sin(q₂)⋅sin(q₂ + q₄)⋅cos (q₃) - 1.493e-5⋅sin(q₂)⋅sin(q₂ + q₃ + q₄) - 7.629e-6⋅sin(q₃)⋅sin(q₃ + q₄)⋅cos (q₂) - 1.493e-5⋅cos(q₂) - 1.3e-5⋅cos(q₂ + q₃) - 3.179e-6                                                                                                                                                       ⎥
+⎢                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ⎥
+⎢                                                                                                                                                                                                                                                        9.633e-5⋅(cos(q₂ + q₃ + q₄) + 1)⋅sin(q₅) + 1.0⋅sin(q₂ + q₃ + q₄)⋅cos(q₅)                                                                                                                                                                                                                                                         ⎥
+⎢                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ⎥
+⎢                                                                                                                                                                                                                                                        9.633e-5⋅(cos(q₂ + q₃ + q₄) + 1)⋅cos(q₅) - 1.0⋅sin(q₅)⋅sin(q₂ + q₃ + q₄)                                                                                                                                                                                                                                                         ⎥
+⎢                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ⎥
+⎣                                                                                                                                                                                                                                                                            9.279e-9 - 1.0⋅cos(q₂ + q₃ + q₄)                                                                                                                                                                                                                                                                             ⎦
+
+Matrix T4
+⎡-9.633e-5⋅sin(q₅)⋅sin(q₂ + q₃ + q₄) + cos(q₅)⋅cos(q₂ + q₃ + q₄)  -sin(q₅)⋅cos(q₂ + q₃ + q₄) - 9.633e-5⋅sin(q₂ + q₃ + q₄)⋅cos(q₅)  1.0⋅sin(q₂ + q₃ + q₄)   0.2175⋅sin(q₂ + q₃ + q₄) + 0.155⋅cos(q₂) + 0.135⋅cos(q₂ + q₃)⎤
+⎢                                                                                                                                                                                                                       ⎥
+⎢9.633e-5⋅sin(q₅)⋅cos(q₂ + q₃ + q₄) + sin(q₂ + q₃ + q₄)⋅cos(q₅)   -sin(q₅)⋅sin(q₂ + q₃ + q₄) + 9.633e-5⋅cos(q₅)⋅cos(q₂ + q₃ + q₄)  -1.0⋅cos(q₂ + q₃ + q₄)  0.155⋅sin(q₂) + 0.135⋅sin(q₂ + q₃) - 0.2175⋅cos(q₂ + q₃ + q₄)⎥
+⎢                                                                                                                                                                                                                       ⎥
+⎢                          1.0⋅sin(q₅)                                                      1.0⋅cos(q₅)                                   9.633e-5                                   2.095e-5                           ⎥
+⎢                                                                                                                                                                                                                       ⎥
+⎣                               0                                                                0                                           0                                          1.0                             ⎦
+
+Jacobian Column for T4
+⎡0.06749⋅sin(q₄ - q₅) + 0.06751⋅sin(q₄ + q₅) + 0.07749⋅sin(q₃ + q₄ - q₅) + 0.07751⋅sin(q₃ + q₄ + q₅) + 0.2175⋅cos(q₅) ⎤
+⎢                                                                                                                     ⎥
+⎢-0.2175⋅sin(q₅) - 0.06749⋅cos(q₄ - q₅) + 0.06751⋅cos(q₄ + q₅) - 0.07749⋅cos(q₃ + q₄ - q₅) + 0.07751⋅cos(q₃ + q₄ + q₅)⎥
+⎢                                                                                                                     ⎥
+⎢                                         -0.135⋅cos(q₄) - 0.155⋅cos(q₃ + q₄)                                         ⎥
+⎢                                                                                                                     ⎥
+⎢                                                     1.0⋅sin(q₅)                                                     ⎥
+⎢                                                                                                                     ⎥
+⎢                                                     1.0⋅cos(q₅)                                                     ⎥
+⎢                                                                                                                     ⎥
+⎣                                                      9.633e-5                                                       ⎦
+
+Matrix T3
+⎡-9.633e-5⋅sin(q₅)⋅sin(q₃ + q₄) + cos(q₅)⋅cos(q₃ + q₄)  -sin(q₅)⋅cos(q₃ + q₄) - 9.633e-5⋅sin(q₃ + q₄)⋅cos(q₅)  1.0⋅sin(q₃ + q₄)   0.2175⋅sin(q₃ + q₄) + 0.135⋅cos(q₃)⎤
+⎢                                                                                                                                                                    ⎥
+⎢9.633e-5⋅sin(q₅)⋅cos(q₃ + q₄) + sin(q₃ + q₄)⋅cos(q₅)   -sin(q₅)⋅sin(q₃ + q₄) + 9.633e-5⋅cos(q₅)⋅cos(q₃ + q₄)  -1.0⋅cos(q₃ + q₄)  0.135⋅sin(q₃) - 0.2175⋅cos(q₃ + q₄)⎥
+⎢                                                                                                                                                                    ⎥
+⎢                     1.0⋅sin(q₅)                                            1.0⋅cos(q₅)                           9.633e-5                    2.095e-5              ⎥
+⎢                                                                                                                                                                    ⎥
+⎣                          0                                                      0                                    0                          1.0                ⎦
+
+Jacobian Column for T3
+⎡  0.06749⋅sin(q₄ - q₅) + 0.06751⋅sin(q₄ + q₅) + 0.2175⋅cos(q₅)  ⎤
+⎢                                                                ⎥
+⎢-0.135⋅sin(q₄)⋅sin(q₅) - 0.2175⋅sin(q₅) + 1.3e-5⋅cos(q₄)⋅cos(q₅)⎥
+⎢                                                                ⎥
+⎢                         -0.135⋅cos(q₄)                         ⎥
+⎢                                                                ⎥
+⎢                          1.0⋅sin(q₅)                           ⎥
+⎢                                                                ⎥
+⎢                          1.0⋅cos(q₅)                           ⎥
+⎢                                                                ⎥
+⎣                            9.633e-5                            ⎦
+
+Matrix T2
+⎡-9.633e-5⋅sin(q₄)⋅sin(q₅) + cos(q₄)⋅cos(q₅)  -9.633e-5⋅sin(q₄)⋅cos(q₅) - sin(q₅)⋅cos(q₄)  1.0⋅sin(q₄)   0.2175⋅sin(q₄) ⎤
+⎢                                                                                                                       ⎥
+⎢sin(q₄)⋅cos(q₅) + 9.633e-5⋅sin(q₅)⋅cos(q₄)   -sin(q₄)⋅sin(q₅) + 9.633e-5⋅cos(q₄)⋅cos(q₅)  -1.0⋅cos(q₄)  -0.2175⋅cos(q₄)⎥
+⎢                                                                                                                       ⎥
+⎢                1.0⋅sin(q₅)                                  1.0⋅cos(q₅)                    9.633e-5       2.095e-5    ⎥
+⎢                                                                                                                       ⎥
+⎣                     0                                            0                            0              1.0      ⎦
+
+Jacobian Column for T2
+⎡0.2175⋅cos(q₅) ⎤
+⎢               ⎥
+⎢-0.2175⋅sin(q₅)⎥
+⎢               ⎥
+⎢       0       ⎥
+⎢               ⎥
+⎢  1.0⋅sin(q₅)  ⎥
+⎢               ⎥
+⎢  1.0⋅cos(q₅)  ⎥
+⎢               ⎥
+⎣   9.633e-5    ⎦
+
+Matrix T1
+⎡cos(q₅)  -sin(q₅)   0     0   ⎤
+⎢                              ⎥
+⎢sin(q₅)  cos(q₅)    0     0   ⎥
+⎢                              ⎥
+⎢   0        0      1.0  0.2175⎥
+⎢                              ⎥
+⎣   0        0       0    1.0  ⎦
+
+Jacobian Column for T1
+⎡ 0 ⎤
+⎢   ⎥
+⎢ 0 ⎥
+⎢   ⎥
+⎢ 0 ⎥
+⎢   ⎥
+⎢ 0 ⎥
+⎢   ⎥
+⎢ 0 ⎥
+⎢   ⎥
+⎣1.0⎦
+
